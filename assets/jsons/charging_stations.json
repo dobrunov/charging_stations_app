@@ -1,0 +1,123 @@
+[
+  {
+    "id": "1",
+    "name": "Khreshchatyk",
+    "address": "Khreshchatyk, 1",
+    "status": "Available",
+    "connectorType": "Type2",
+    "pricePerKwh": "15"
+  },
+  {
+    "id": "2",
+    "name": "Bessarabian",
+    "address": "Bessarabian Square, 2",
+    "status": "Occupied",
+    "connectorType": "CCS2",
+    "pricePerKwh": "20"
+  },
+  {
+    "id": "3",
+    "name": "Volodymyrska",
+    "address": "Volodymyrska Street, 39",
+    "status": "Available",
+    "connectorType": "TeslaS",
+    "pricePerKwh": "25"
+  },
+  {
+    "id": "4",
+    "name": "Sofiivska",
+    "address": "Sofiivska Square, 1",
+    "status": "Occupied",
+    "connectorType": "CCS2",
+    "pricePerKwh": "20"
+  },
+  {
+    "id": "5",
+    "name": "Postal",
+    "address": "Postal Square, 3",
+    "status": "Available",
+    "connectorType": "Type2",
+    "pricePerKwh": "15"
+  },
+  {
+    "id": "6",
+    "name": "Mykhailivska",
+    "address": "Mykhailivska Street, 16",
+    "status": "Occupied",
+    "connectorType": "TeslaS",
+    "pricePerKwh": "25"
+  },
+  {
+    "id": "7",
+    "name": "Andriyivskyy",
+    "address": "Andriyivskyy Descent, 3",
+    "status": "Available",
+    "connectorType": "CCS2",
+    "pricePerKwh": "20"
+  },
+  {
+    "id": "8",
+    "name": "Tolstoho",
+    "address": "Lva Tolstoho Square, 3",
+    "status": "Available",
+    "connectorType": "TeslaS",
+    "pricePerKwh": "25"
+  },
+  {
+    "id": "9",
+    "name": "European",
+    "address": "European Square, 1",
+    "status": "Available",
+    "connectorType": "Type2",
+    "pricePerKwh": "15"
+  },
+  {
+    "id": "10",
+    "name": "Pecherska",
+    "address": "Pechersky Descent, 1",
+    "status": "Occupied",
+    "connectorType": "TeslaS",
+    "pricePerKwh": "25"
+  },
+  {
+    "id": "11",
+    "name": "Sahaidachna",
+    "address": "Sahaidachny Street, 8",
+    "status": "Available",
+    "connectorType": "CCS2",
+    "pricePerKwh": "20"
+  },
+  {
+    "id": "12",
+    "name": "Shevchenko",
+    "address": "Taras Shevchenko Boulevard, 15",
+    "status": "Occupied",
+    "connectorType": "Type2",
+    "pricePerKwh": "15"
+  },
+  {
+    "id": "13",
+    "name": "Hrushevskoho",
+    "address": "Mykhaila Hrushevskoho Street, 28",
+    "status": "Available",
+    "connectorType": "CCS2",
+    "pricePerKwh": "25"
+  },
+  {
+    "id": "14",
+    "name": "Holosiivska",
+    "address": "Holosiivskyi Prospect, 35",
+    "status": "Occupied",
+    "connectorType": "Type2",
+    "pricePerKwh": "15"
+  },
+  {
+    "id": "15",
+    "name": "Parkova",
+    "address": "Parkova Road, 2",
+    "status": "Available",
+    "connectorType": "Type2",
+    "pricePerKwh": "15"
+  }
+]
+
