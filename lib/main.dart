@@ -1,28 +1,46 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/adapters.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'core/services/favorite_storage_service.dart';
+import 'data/repositories/stations_repository.dart';
 import 'features/station_list/station_list_screen.dart';
+import 'features/station_list/station_list_cubit.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  final stationsRepository = StationsRepository();
+  final favoriteStorageService = FavoriteStorageService();
 
-  await Hive.initFlutter();
-
-  await Hive.openBox<List<String>>('favoritesBox');
-  runApp(MyApp());
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => StationListCubit(stationsRepository, favoriteStorageService),
+        ),
+      ],
+      child: MyApp(
+        stationsRepository: stationsRepository,
+        storageService: favoriteStorageService,
+      ),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final StationsRepository stationsRepository;
+  final FavoriteStorageService storageService;
+
+  const MyApp({super.key, required this.stationsRepository, required this.storageService});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'EV Charging Stations',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      home: BlocProvider(
+        create: (context) => StationListCubit(stationsRepository, storageService)..loadStations(),
+        child: StationListScreen(),
       ),
-      home: StationListScreen(),
     );
   }
 }
