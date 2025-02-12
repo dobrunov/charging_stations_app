@@ -1,9 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/services/favorite_storage_service.dart';
-import '../../data/repositories/stations_repository.dart';
 import '../../data/models/charging_station_model.dart';
-
+import '../../data/repositories/stations_repository.dart';
 
 class StationListCubit extends Cubit<List<ChargingStation>> {
   final StationsRepository stationsRepository;
@@ -24,7 +23,6 @@ class StationListCubit extends Cubit<List<ChargingStation>> {
 
   void toggleFavorite(String id) async {
     final updatedStations = state.map((station) {
-
       if (station.id == id) {
         return ChargingStation(
           id: station.id,
@@ -45,7 +43,7 @@ class StationListCubit extends Cubit<List<ChargingStation>> {
     await favoriteStorageService.saveFavoriteStations(favoriteStationsIds);
   }
 
-  void toggleFavorites() {
+  void toggleFavoritesFilter() {
     showFavoritesOnly = !showFavoritesOnly;
     if (showFavoritesOnly) {
       emit(state.where((station) => station.isFavorite).toList());
