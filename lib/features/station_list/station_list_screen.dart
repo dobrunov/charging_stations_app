@@ -1,13 +1,10 @@
-import 'dart:io';
-
 import 'package:charging_stations_app/features/station_list/widgets/animated_favorite_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../core/utils/util_methods.dart';
 import '../../data/models/charging_station_model.dart';
-import '../../features/station_detail/station_detail_screen.dart';
 import '../../features/station_list/widgets/price_widget.dart';
 import '../../features/station_list/widgets/status_dot_widget.dart';
 import 'station_list_cubit.dart';
@@ -122,30 +119,13 @@ class _StationListScreenState extends State<StationListScreen> with SingleTicker
         ],
       ),
       onTap: () async {
-        final updatedId = await Navigator.push(
-          context,
-          Platform.isIOS
-              ? CupertinoPageRoute(
-                  builder: (context) => StationDetailScreen(station: station),
-                )
-              : PageRouteBuilder(
-                  transitionDuration: Duration(milliseconds: 200),
-                  pageBuilder: (context, animation, secondaryAnimation) {
-                    return FadeTransition(
-                      opacity: animation,
-                      child: SlideTransition(
-                        position: Tween<Offset>(
-                          begin: Offset(1, 0),
-                          end: Offset.zero,
-                        ).animate(animation),
-                        child: StationDetailScreen(station: station),
-                      ),
-                    );
-                  },
-                ),
+        final result = await context.push<String>(
+          '/station/${station.id}',
+          extra: station,
         );
-        if (updatedId != null) {
-          cubit.toggleFavorite(updatedId);
+
+        if (result != null) {
+          cubit.toggleFavorite(result);
         }
       },
     );
