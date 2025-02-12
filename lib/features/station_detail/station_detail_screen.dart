@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../core/utils/util_methods.dart';
 import '../../data/models/charging_station_model.dart';
 import '../station_list/station_list_cubit.dart';
 
@@ -37,7 +38,7 @@ class _StationDetailScreenState extends State<StationDetailScreen> {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: Text(widget.station.address, style: TextStyle(fontSize: 18)),
                     ),
-                    Text(widget.station.status, style: TextStyle(fontSize: 16, color: _getColorFor(widget.station.status))),
+                    Text(widget.station.status, style: TextStyle(fontSize: 16, color: UtilMethods.getColorFor(widget.station.status))),
                   ],
                 ),
                 IconButton(
@@ -62,16 +63,5 @@ class _StationDetailScreenState extends State<StationDetailScreen> {
         ),
       ),
     );
-  }
-
-  Color _getColorFor(String status) {
-    switch (status) {
-      case 'Available':
-        return Colors.green;
-      case 'Occupied':
-        return Colors.red;
-      default:
-        return Colors.grey;
-    }
   }
 }

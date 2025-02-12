@@ -5,11 +5,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../data/models/charging_station_model.dart';
-import '../data/repositories/stations_repository.dart';
-import '../features/station_detail/station_detail_screen.dart';
-import '../features/station_list/station_list_cubit.dart';
-import '../features/station_list/station_list_screen.dart';
+import '../../data/models/charging_station_model.dart';
+import '../../data/repositories/stations_repository.dart';
+import '../../features/station_detail/station_detail_screen.dart';
+import '../../features/station_list/station_list_cubit.dart';
+import '../../features/station_list/station_list_screen.dart';
 
 CustomTransitionPage<T> buildPageWithDefaultTransition<T>({
   required BuildContext context,

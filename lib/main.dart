@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'core/app_router.dart';
+import 'core/config/app_router.dart';
 import 'core/services/favorite_storage_service.dart';
 import 'data/repositories/stations_repository.dart';
 
